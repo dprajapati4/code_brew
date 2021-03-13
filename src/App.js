@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import Video from "./components/Video";
+import Navbar from "./components/Navbar";
+import React from "react";
+import data from './data/video-data';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      videos: [],
+      currVideo: "",
+      order:false,
+    }
+    this.getVideo = this.getVideo.bind(this)
+  }
+  componentDidMount() {
+    this.setState({
+      videos:data,
+      currVideo:data[3]
+       });
+
+  }
+  getVideo(event, video){
+    event.preventDefault()
+    this.setState({
+      currVideo:video
+    })
+  }
+
+  onOrder(event){}
+
+  render() {
+    return (
+      <div className="App">
+        <Video video={this.state.currVideo} />
+        <div className="navbar">
+        <Navbar
+        videos={this.state.videos}
+        getVideo={this.getVideo}
+        />
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App;
+
