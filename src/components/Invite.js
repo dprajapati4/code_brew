@@ -1,73 +1,75 @@
-import React from 'react';
-import Modal from 'react-modal';
+import React from "react";
+import { sendSms } from "../helper-function/sendSms";
 
-import {sendSms} from '../helper-function/sendSms';
-
-Modal.setAppElement('#root');
-
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
-
-
-export default class Invite extends React.Component{
-  constructor(props){
+export default class Invite extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       phoneNumber: "",
-      modelIsOpen: false
-    }
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+      showForm: false,
+      submitted: false,
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-   openModal() {
-    console.log('sehint')
-    // setIsOpen(true);
-    this.setState({modelIsOpen: true})
-  }
-  closeModal() {
-    // setIsOpen(true);
-    this.setState({modelIsOpen: false})
-  }
-  async sendMessage(event){
-    event.preventDefault();
+
+  // TODO: add modal
+  async sendMessage(event) {
     try {
-      const sentMessage = await sendSms(this.state.phoneNumber)
+      // const sentMessage = await sendSms(this.state.phoneNumber);
+      // if (sentMessage) {
+       this.setState({ submitted: false, phoneNumber: "" });
+
+      // }
     } catch (error) {
+      console.log("error in invite sendMessage", error);
     }
   }
 
-  render(){
-    const {modalIsOpen} = this.state;
-    // console.log("this state", this.state);
-    return(
+  handleChange(event) {
+    event.preventDefault();
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+    this.setState({ submitted: true, showForm: false }); // show user that message is sending
+       setTimeout(() => this.sendMessage(this.state.phoneNumber), 1500);
+    // try {
+    // } catch (error) {
+    //   console.log("error in invite handleSubmit", error);
+    // }
+  }
+
+  render() {
+    const { showForm, submitted } = this.state;
+    console.log("_____INVITE STATE_____", this.state);
+    return (
       <div id="mo">
-         <h4>Invite A Friend</h4>
-            <span className="cup-image">
-              <img
-                src="http://clipart-library.com/images/di48x8LAT.jpg"
-                alt="coffee cup"
-                width="50"
-                height="50"
-              />
-            </span>
-        <button onClick={this.openModal}>Open Modal</button>
-        <Modal
-          isOpen={modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        ></Modal>
+        <h4>Invite A Friend</h4>
+        {showForm ? (
+          <form onSubmit={this.handleSubmit}>
+            <input
+              name="phoneNumber"
+              value={this.state.phoneNumber}
+              onChange={this.handleChange}
+              placeholder="+123456789"
+            />
+            <input type="submit" value="Invite" />
+          </form>
+        ) : (
+          <img
+            src="http://clipart-library.com/images/di48x8LAT.jpg"
+            alt="coffee cup"
+            width="50"
+            height="50"
+            onClick={() => {
+              this.setState({ showForm: true });
+            }}
+          />
+        )}
+        {submitted && <div> Sending your friend an invite :D </div>}
       </div>
     );
   }
-
 }
