@@ -55,7 +55,7 @@ code {
   overflow-y: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none;
-  height: 20%;
+  height: 25%;
   width: 100%;
   position: absolute;
   padding: 1px 12px;
@@ -64,10 +64,16 @@ code {
   color: #fff;
   bottom: 0px;
 }
-.categorys{
+
+.navbar-container{
+  display:flex;
+  flex-flow: wrap;
+}
+
+/* .categorys{
   display:flex;
  flex-flow: wrap;
-}
+} */
 .coffee-cup{
 align-items: center;
 height: 20px;
@@ -79,5 +85,5 @@ width: 20px;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
-    overflow: hidden;   
+    overflow: hidden;
 }
