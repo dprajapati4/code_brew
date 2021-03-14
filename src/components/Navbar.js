@@ -1,9 +1,12 @@
 import React from "react";
-import data from "../data/video-data";
 
-const Navbar = (props) => {
-  const videos = data;
-  const
+
+export default class Navbar extends React.Component{
+
+  render (){
+  const videos = this.props.videos;
+  const items = this.props.items
+
   return (
     <div id="container">
       <h1>Cafe Code Brew</h1>
@@ -13,7 +16,7 @@ const Navbar = (props) => {
           {videos.map((video) => {
             return (
               <button
-                onClick={(event) => props.getVideo(event, video)}
+                onClick={(event) => this.props.getVideo(event, video)}
                 type="submit"
                 key={video.title}
               >
@@ -22,21 +25,51 @@ const Navbar = (props) => {
             );
           })}
         </div>
-        <div className='order'>
+        <div className="order">
+        {!this.props.order ?
+        <div>
           <h4>Find</h4>
-        <button>Cookie</button>
-        <div className="coffee-cup">
-          <img
-            src="http://clipart-library.com/images/di48x8LAT.jpg"
-            alt="coffee cup"
-            width="50"
-            height="50"
-          />
+          <div className="foods">
+            {items && items.map((item) => {
+              return (
+                <span
+                  className="food-images"
+                  key={item.name}
+                  onClick={(event) => this.props.onOrder(event,'nyc', item.name)}
+                >
+                  <img
+                    src={item.imageUrl}
+                    alt="coffee cup"
+                    width="50"
+                    height="50"
+                  />
+                </span>
+              );
+            })}
+          </div>
+          </div> :
+          <div>
+            {this.props.cafes[0].name}
+            <br/>
+            {this.props.cafes[0].location.display_address}
+            <br/>
+            {this.props.cafes[1].name}
+            <br/>
+            {this.props.cafes[1].location.display_address}
+          </div>}
+          <div className="coffee-cup">
+            <img
+              src="http://clipart-library.com/images/di48x8LAT.jpg"
+              alt="coffee cup"
+              width="50"
+              height="50"
+            />
+          </div>
         </div>
       </div>
-      </div>
     </div>
-  );
-};
+  )
+}
+}
 
-export default Navbar;
+
