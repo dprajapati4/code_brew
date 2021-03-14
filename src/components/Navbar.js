@@ -39,8 +39,6 @@ export default class Navbar extends React.Component {
 
   render() {
     const videos = this.props.videos;
-    const items = this.props.items;
-
     return (
       <div id="container">
         <h1>Cafe Code Brew</h1>
@@ -63,9 +61,7 @@ export default class Navbar extends React.Component {
           <h4> Pick your music </h4>
             {/* <ReactAudioPlayer src="http://node-24.zeno.fm/60ef4p33vxquv?rj-ttl=5&rj-tok=AAABcfD5im8AKkQwULjleajGRg" autoPlay volume/> */}
           </div>
-          <div className="order">
             <Cafes />
-          </div>
           <div className="coffee-cup">
            <Invite />
           </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
 import {sendSms} from '../helper-function/sendSms';
@@ -47,7 +46,7 @@ export default class Invite extends React.Component{
 
   render(){
     const {modalIsOpen} = this.state;
-    console.log("this state", this.state);
+    // console.log("this state", this.state);
     return(
       <div id="mo">
          <h4>Invite A Friend</h4>

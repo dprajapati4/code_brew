@@ -23,8 +23,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a { color: inherit; }
 
-* { box-sizing: border-box; }
+
 .video-background {
   background: #000;
   position: fixed;
@@ -62,10 +63,9 @@ code {
 }
 
 .navbar{
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -ms-overflow-style: none;
-  height: 20%;
+  overflow: hidden;
+  /* -ms-overflow-style: none; */
+  height: 25%;
   width: 100%;
   position: absolute;
   padding: 1px 12px;
@@ -97,4 +97,9 @@ display: block;
 
 .foods{
   background-color: transparent;
+}
+
+.cafe-list{
+    height: 100px;
+    overflow-y: scroll;
 }

@@ -1,7 +1,11 @@
 import React from "react";
 
-import {items} from '../data/item-data';
+import SingleCafe from './SingleCafe';
+
+import { items } from "../data/item-data";
+import { yelpData } from "../data/temp_yelp_data";
 import { getData } from "../helper-function/getYelpData";
+import getGeolocation from "../helper-function/getGeolocation";
 
 export default class Cafes extends React.Component {
   constructor(props) {
@@ -9,19 +13,35 @@ export default class Cafes extends React.Component {
     this.state = {
       cafes: [],
       showCafes: false,
+      loadingCafes: false,
+      coordinates: { latitude: "40.730610", longitude: "74.0060" },
     };
 
     this.onBack = this.onBack.bind(this);
     this.onOrder = this.onOrder.bind(this);
+    this.setLocation = this.setLocation.bind(this);
   }
 
-  async onOrder(event, location, item) {
+  async setLocation() {
+    const location = await getGeolocation();
+    if (location) {
+      const coordinates = {
+        longitude: location.coords.longitude,
+        latitude: location.coords.latitude,
+      };
+      this.setState({ coordinates });
+    }
+  }
+
+  async onOrder(event, item) {
     try {
       event.preventDefault();
-      const cafeData = await getData(location, item);
+      await this.setLocation();
+      // const cafeData = await getData(this.state.coordinates, item);
       this.setState({
         order: true,
-        cafes: cafeData.data.businesses,
+        // cafes: cafeData.data.businesses,
+        cafes: yelpData.businesses
       });
     } catch (error) {
       console.log("Error in getting yelp data", error);
@@ -36,28 +56,30 @@ export default class Cafes extends React.Component {
   }
 
   render() {
+    console.log("_____CAFE STATE_____", this.state);
+    const {cafes} = this.state;
     return (
-      <div>
+      <div className="order">
         {!this.state.order ? (
           <div>
             <h4>Find</h4>
             <div className="foods">
               {items.map((item) => {
-                  return (
-                    <span
-                      className="food-images"
-                      key={item.name}
-                      onClick={(event) => this.onOrder(event, "nyc", item.name)}
-                    >
-                      <img
-                        src={item.imageUrl}
-                        alt="food items "
-                        width="50"
-                        height="50"
-                      />
-                    </span>
-                  );
-                })}
+                return (
+                  <span
+                    className="food-images"
+                    key={item.name}
+                    onClick={(event) => this.onOrder(event, item.name)}
+                  >
+                    <img
+                      src={item.imageUrl}
+                      alt="food items"
+                      width="50"
+                      height="50"
+                    />
+                  </span>
+                );
+              })}
             </div>
           </div>
         ) : (
@@ -69,15 +91,8 @@ export default class Cafes extends React.Component {
             >
               Find Somthing Else
             </button>
-
-            <div>
-              {this.state.cafes[0].name}
-              <br />
-              {this.state.cafes[0].location.display_address}
-              <br />
-              {this.state.cafes[1].name}
-              <br />
-              {this.state.cafes[1].location.display_address}
+            <div className="cafe-list">
+            {cafes.map(cafe => <SingleCafe cafe={cafe}/>)}
             </div>
           </div>
         )}
