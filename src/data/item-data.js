@@ -1,4 +1,4 @@
-export  const items = [
+export const items = [
   {
     name: 'cake',
     imageUrl:'https://img1.pnghut.com/2/16/19/8WMTV40ix8/cake-painting-art-food-artwork.jpg'

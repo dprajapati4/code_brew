@@ -4,7 +4,6 @@ import React from "react";
 
 
 import data from "./data/video-data";
-import {items} from "./data/item-data"
 import getGeolocation from './helper-function/getGeolocation';
 
 export default class App extends React.Component {
@@ -34,8 +33,6 @@ async componentDidMount() {
     this.setState({
       videos: data,
       currVideo: data[3],
-      order:false,
-      orderItems: items
     });
   }
   getVideo(event, video) {

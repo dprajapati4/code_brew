@@ -3,6 +3,7 @@ import ReactAudioPlayer from "react-audio-player";
 
 import { getData } from "../helper-function/getYelpData";
 import Invite from './Invite';
+import Cafes from './Cafes';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -60,55 +61,10 @@ export default class Navbar extends React.Component {
           </div>
           <div className="music-player">
           <h4> Pick your music </h4>
-            <ReactAudioPlayer src="http://node-24.zeno.fm/60ef4p33vxquv?rj-ttl=5&rj-tok=AAABcfD5im8AKkQwULjleajGRg" autoPlay volume/>
+            {/* <ReactAudioPlayer src="http://node-24.zeno.fm/60ef4p33vxquv?rj-ttl=5&rj-tok=AAABcfD5im8AKkQwULjleajGRg" autoPlay volume/> */}
           </div>
           <div className="order">
-            {!this.state.order ? (
-              <div>
-                <h4>Find</h4>
-                <div className="foods">
-                  {items &&
-                    items.map((item) => {
-                      return (
-                        <span
-                          className="food-images"
-                          key={item.name}
-                          onClick={(event) =>
-                            this.onOrder(event, "nyc", item.name)
-                          }
-                        >
-                          <img
-                            src={item.imageUrl}
-                            alt="food items "
-                            width="50"
-                            height="50"
-                          />
-                        </span>
-                      );
-                    })}
-                </div>
-              </div>
-            ) : (
-              <div>
-                <button
-                  onClick={(event) => {
-                    this.onBack(event);
-                  }}
-                >
-                  Find Somthing Else
-                </button>
-
-                <div>
-                  {this.state.cafes[0].name}
-                  <br />
-                  {this.state.cafes[0].location.display_address}
-                  <br />
-                  {this.state.cafes[1].name}
-                  <br />
-                  {this.state.cafes[1].location.display_address}
-                </div>
-              </div>
-            )}
+            <Cafes />
           </div>
           <div className="coffee-cup">
            <Invite />
