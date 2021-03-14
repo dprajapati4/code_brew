@@ -1,7 +1,40 @@
 import React from "react";
-
+import { getData } from "../helper-function/getYelpData";
 
 export default class Navbar extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      cafes:[],
+      order:""
+    }
+    this.onBack = this.onBack.bind(this)
+    this.onOrder = this.onOrder.bind(this)
+  }
+
+  async onOrder(event, location, item) {
+    try {
+      event.preventDefault();
+      const cafeData= await getData(location, item);
+      this.setState({
+        order: true ,
+       cafes:cafeData.data.businesses
+     })
+
+    } catch (error) {
+      console.log('Error in getting yelp data', error)
+    }
+
+  }
+
+
+  onBack(event){
+    event.preventDefault()
+    this.setState({
+      order:false
+    })
+    console.log('in the back', this.state)
+  }
 
   render (){
   const videos = this.props.videos;
@@ -26,7 +59,7 @@ export default class Navbar extends React.Component{
           })}
         </div>
         <div className="order">
-        {!this.props.order ?
+        {!this.state.order ?
         <div>
           <h4>Find</h4>
           <div className="foods">
@@ -35,7 +68,7 @@ export default class Navbar extends React.Component{
                 <span
                   className="food-images"
                   key={item.name}
-                  onClick={(event) => this.props.onOrder(event,'nyc', item.name)}
+                  onClick={(event) => this.onOrder(event,'nyc', item.name)}
                 >
                   <img
                     src={item.imageUrl}
@@ -49,13 +82,14 @@ export default class Navbar extends React.Component{
           </div>
           </div> :
           <div>
-            {this.props.cafes[0].name}
+            <button onClick={(event)=>{this.onBack(event)}}>Find Somthing Else</button>
+            {this.state.cafes[0].name}
             <br/>
-            {this.props.cafes[0].location.display_address}
+            {this.state.cafes[0].location.display_address}
             <br/>
-            {this.props.cafes[1].name}
+            {this.state.cafes[1].name}
             <br/>
-            {this.props.cafes[1].location.display_address}
+            {this.state.cafes[1].location.display_address}
           </div>}
           <div className="coffee-cup">
             <img

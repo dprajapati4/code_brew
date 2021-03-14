@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import React from "react";
 import data from "./data/video-data";
 import {items} from "./data/item-data"
-import { getData } from "./helper-function/getYelpData";
+
 
 
 export default class App extends React.Component {
@@ -13,11 +13,9 @@ export default class App extends React.Component {
       videos: [],
       currVideo: "",
       orderItems: [],
-      cafes:[],
-      order:""
     };
     this.getVideo = this.getVideo.bind(this);
-    this.onOrder = this.onOrder.bind(this)
+ 
   }
   componentDidMount() {
     this.setState({
@@ -35,20 +33,6 @@ export default class App extends React.Component {
     });
   }
 
-  async onOrder(event, location, item) {
-    try {
-      event.preventDefault();
-      const cafeData= await getData(location, item);
-      this.setState({
-        order: true ,
-       cafes:cafeData.data.businesses
-     })
-
-    } catch (error) {
-      console.log('Error in getting yelp data', error)
-    }
-
-  }
 
   render() {
     return (
@@ -59,9 +43,6 @@ export default class App extends React.Component {
            videos={this.state.videos}
            getVideo={this.getVideo}
            items={this.state.orderItems}
-           order={this.state.order}
-           onOrder={this.onOrder}
-           cafes={this.state.cafes}
            />
         </div>
       </div>
