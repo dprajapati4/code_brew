@@ -2,6 +2,7 @@ import React from "react";
 import ReactAudioPlayer from "react-audio-player";
 
 import { getData } from "../helper-function/getYelpData";
+import Invite from './Invite';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -110,15 +111,7 @@ export default class Navbar extends React.Component {
             )}
           </div>
           <div className="coffee-cup">
-            <h4>Invite A Friend</h4>
-            <span className="cup-image">
-              <img
-                src="http://clipart-library.com/images/di48x8LAT.jpg"
-                alt="coffee cup"
-                width="50"
-                height="50"
-              />
-            </span>
+           <Invite />
           </div>
         </div>
       </div>
