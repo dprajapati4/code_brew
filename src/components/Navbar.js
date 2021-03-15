@@ -1,5 +1,4 @@
 import React from "react";
-
 import { getData } from "../helper-function/getYelpData";
 import Invite from "./Invite";
 import Cafes from "./Cafes";

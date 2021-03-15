@@ -1,9 +1,6 @@
 import React from "react";
-
 import SingleCafe from './SingleCafe';
-
 import { items } from "../data/item-data";
-import { yelpData } from "../data/temp_yelp_data";
 import { getData } from "../helper-function/getYelpData";
 import getGeolocation from "../helper-function/getGeolocation";
 

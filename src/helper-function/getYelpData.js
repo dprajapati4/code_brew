@@ -9,7 +9,6 @@ export const getData = (location, item) => {
         Authorization: `Bearer ${process.env.REACT_APP_MY_KEY}`,
       },
       params: {
-        //  location: location,
         term: item,
         limit: 5,
         latitude,
