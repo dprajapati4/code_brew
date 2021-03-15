@@ -1,6 +1,7 @@
 import Video from "./components/Video";
 import Navbar from "./components/Navbar";
 import React from "react";
+// import 'semantic-ui-css/semantic.min.css'
 
 import data from "./data/video-data";
 
@@ -21,6 +22,7 @@ export default class App extends React.Component {
       currVideo: data[3],
     });
   }
+  
   getVideo(event, video) {
     event.preventDefault();
     this.setState({
