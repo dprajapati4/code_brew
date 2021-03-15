@@ -1,8 +1,7 @@
 export const items = [
   {
     name: 'cake',
-    imageUrl:'https://img1.pnghut.com/2/16/19/8WMTV40ix8/cake-painting-art-food-artwork.jpg'
-    // imageUrl:'https://img.freepik.com/free-vector/cake-slice-neon-sign_73458-1112.jpg'
+    imageUrl:'https://img.freepik.com/free-vector/cake-slice-neon-sign_73458-1112.jpg'
   },
   {
     name: 'sandwich',

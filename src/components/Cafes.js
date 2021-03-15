@@ -69,19 +69,8 @@ export default class Cafes extends React.Component {
             {loadingCafes && <span> Finding locations near you :D</span>}
               {items.map((item) => {
                 return (
-                  <span
-                    className="food-images"
-                    key={item.name}
-                    onClick={(event) => this.onOrder(event, item.name)}
-                  >
-                    <img
-                      src={item.imageUrl}
-                      alt="food items"
-                      width="50"
-                      height="50"
-                    />
-                  </span>
-                );
+                <img key={item.name} onClick={(event) => this.onOrder(event, item.name)} src={item.imageUrl} class="br-100 pa1 ba b--black-10 h3 w3" alt="avatar"/>
+              );
               })}
             </div>
           </div>

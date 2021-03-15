@@ -59,10 +59,9 @@ export default class Invite extends React.Component {
           </form>
         ) : (
           <img
-            src="http://clipart-library.com/images/di48x8LAT.jpg"
+            src="https://media.istockphoto.com/vectors/friends-drink-coffee-icon-elements-of-friendship-in-neon-style-icons-vector-id1093810888?k=6&m=1093810888&s=170667a&w=0&h=R1nYdtCqu7KbDUnYnMkhcylljFnOg1s8ncloBK0JONc="
             alt="coffee cup"
-            width="50"
-            height="50"
+            class="br1 h3 w3 dib"
             onClick={() => {
               this.setState({ showForm: true });
             }}
