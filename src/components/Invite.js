@@ -43,9 +43,8 @@ export default class Invite extends React.Component {
 
   render() {
     const { showForm, submitted } = this.state;
-    console.log("_____INVITE STATE_____", this.state);
     return (
-      <div id="mo">
+      <div className="fl w-25 tc">
         <h4>Invite A Friend</h4>
         {showForm ? (
           <form onSubmit={this.handleSubmit}>
@@ -61,7 +60,7 @@ export default class Invite extends React.Component {
           <img
             src="https://media.istockphoto.com/vectors/friends-drink-coffee-icon-elements-of-friendship-in-neon-style-icons-vector-id1093810888?k=6&m=1093810888&s=170667a&w=0&h=R1nYdtCqu7KbDUnYnMkhcylljFnOg1s8ncloBK0JONc="
             alt="coffee cup"
-            class="br1 h3 w3 dib"
+            className="br1 h3 w3 dib"
             onClick={() => {
               this.setState({ showForm: true });
             }}

@@ -75,28 +75,11 @@ a { color: inherit; }
   bottom: 0px;
 }
 
-.navbar-container{
-  display: flex;
-
-}
-
-.coffee-cup{
-display: block;
-}
-
-.cup-image{
-  display: inline;
-}
-
 .button{
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;
-}
-
-.foods{
-  background-color: transparent;
 }
 
 .cafe-list{

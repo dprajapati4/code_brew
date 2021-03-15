@@ -19,7 +19,7 @@ export default class CafeType extends React.Component {
   render() {
     const {currentVideo} = this.props;
     return (
-      <div className="categorys">
+      <div className="fl w-25">
         <h4> Pick your cafe </h4>
         <label>
           {/* Pick your favorite flavor: */}
@@ -29,7 +29,7 @@ export default class CafeType extends React.Component {
           </select>
         </label>
         <div>
-          
+
         <a href={currentVideo.url} target="_blank" rel="noreferrer">
         Video Source
         </a>

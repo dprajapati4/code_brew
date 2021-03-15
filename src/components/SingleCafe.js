@@ -3,11 +3,10 @@ const singleCafe = (props) => {
   const { url, location, name, rating, image_url } = cafe;
   const { display_address } = location;
   return (
-    <div style={{ border: "2px solid black", display: "flex"}}>
-      {/* <img width="100px" height="100px" src={image_url} alt="cafe" /> */}
+    <div style={{display: "flex"}}>
       <img
       src={image_url}
-      class="br1 h3 w3 dib" alt="cafe"/>
+      className="br1 h3 w3 dib" alt="cafe"/>
       <div style={{paddingLeft: "10px"}}>
       <span>
         <a href={url} target="_blank" rel="noreferrer">

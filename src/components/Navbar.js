@@ -1,10 +1,10 @@
 import React from "react";
 
 import { getData } from "../helper-function/getYelpData";
-import Invite from './Invite';
-import Cafes from './Cafes';
+import Invite from "./Invite";
+import Cafes from "./Cafes";
 import MusicPlayer from "./MusicPlayer";
-import CafeType from './CafeType';
+import CafeType from "./CafeType";
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -39,31 +39,17 @@ export default class Navbar extends React.Component {
   }
 
   render() {
-    const videos = this.props.videos;
     return (
       <div id="container">
         <h1>Cafe Code Brew</h1>
-        <div className="navbar-container">
-          <CafeType changeVideo={this.props.changeVideo} currentVideo={this.props.currentVideo} />
-          {/* <div className="categorys">
-            <h4> Pick your cafe </h4>
-            {videos.map((video) => {
-              return (
-                <button
-                  onClick={(event) => this.props.getVideo(event, video)}
-                  type="submit"
-                  key={video.title}
-                >
-                  {video.title}
-                </button>
-              );
-            })}
-          </div> */}
+        <div className="navbar-container cf">
+          <CafeType
+            changeVideo={this.props.changeVideo}
+            currentVideo={this.props.currentVideo}
+          />
           <MusicPlayer />
-            <Cafes />
-          <div className="coffee-cup">
-           <Invite />
-          </div>
+          <Cafes />
+          <Invite />
         </div>
       </div>
     );

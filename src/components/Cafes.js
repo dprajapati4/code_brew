@@ -58,18 +58,17 @@ export default class Cafes extends React.Component {
   }
 
   render() {
-    console.log("_____CAFE STATE_____", this.state);
     const {cafes, loadingCafes} = this.state;
     return (
-      <div className="order">
+      <div className="fl w-25">
         {!this.state.order ? (
           <div>
             <h4>Find</h4>
             <div className="foods">
-            {loadingCafes && <span> Finding locations near you :D</span>}
+            {loadingCafes && <div> Finding locations near you :D</div>}
               {items.map((item) => {
                 return (
-                <img key={item.name} onClick={(event) => this.onOrder(event, item.name)} src={item.imageUrl} class="br-100 pa1 ba b--black-10 h3 w3" alt="avatar"/>
+                <img key={item.name} onClick={(event) => this.onOrder(event, item.name)} src={item.imageUrl} className="br-100 pa1 ba b--black-10 h3 w3" alt="avatar"/>
               );
               })}
             </div>
