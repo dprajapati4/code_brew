@@ -50,7 +50,7 @@ export default class MusicPlayer extends React.Component{
     const currentSong = musicList[position];
     return(
       <div className="fl w-25">
-      <h4> Pick your music </h4>
+      <h4> Pick Your Music </h4>
         <AudioPlayer src={currentSong.url} autoPlay loop ref={(element) => { this.rap = element; }} />
         <button label="previous" onClick={this.changeSong}> {"<"} </button>
         <button label="pause" onClick={this.pause}> PAUSE </button>
@@ -62,7 +62,3 @@ export default class MusicPlayer extends React.Component{
   }
 
 }
-
-// play pause
-// next
-//  previous

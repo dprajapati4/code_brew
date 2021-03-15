@@ -19,7 +19,7 @@ export default class CafeType extends React.Component {
     const {currentVideo} = this.props;
     return (
       <div className="fl w-25">
-        <h4> Pick your cafe </h4>
+        <h4> Pick Your Cafe </h4>
         <label>
           {/* Pick your favorite flavor: */}
           <select value={currentVideo.title} onChange={this.handleChange}>

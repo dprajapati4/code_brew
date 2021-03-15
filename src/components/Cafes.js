@@ -63,7 +63,7 @@ export default class Cafes extends React.Component {
       <div className="fl w-25">
         {!this.state.order ? (
           <div>
-            <h4>Find</h4>
+            <h4>Find Your Snack</h4>
             <div className="foods">
             {loadingCafes && <div> Finding locations near you :D</div>}
               {items.map((item) => {
