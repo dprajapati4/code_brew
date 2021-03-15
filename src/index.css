@@ -65,7 +65,7 @@ a { color: inherit; }
 .navbar{
   overflow: hidden;
   /* -ms-overflow-style: none; */
-  height: 25%;
+  height: 30%;
   width: 100%;
   position: absolute;
   padding: 1px 12px;

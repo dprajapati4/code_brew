@@ -1,9 +1,9 @@
 import React from "react";
-import ReactAudioPlayer from "react-audio-player";
 
 import { getData } from "../helper-function/getYelpData";
 import Invite from './Invite';
 import Cafes from './Cafes';
+import MusicPlayer from "./MusicPlayer";
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -57,10 +57,7 @@ export default class Navbar extends React.Component {
               );
             })}
           </div>
-          <div className="music-player">
-          <h4> Pick your music </h4>
-            {/* <ReactAudioPlayer src="http://node-24.zeno.fm/60ef4p33vxquv?rj-ttl=5&rj-tok=AAABcfD5im8AKkQwULjleajGRg" autoPlay volume/> */}
-          </div>
+          <MusicPlayer />
             <Cafes />
           <div className="coffee-cup">
            <Invite />

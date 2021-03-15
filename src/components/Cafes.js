@@ -34,14 +34,16 @@ export default class Cafes extends React.Component {
   }
 
   async onOrder(event, item) {
+    this.setState({loadingCafes:true})
     try {
       event.preventDefault();
       await this.setLocation();
-      // const cafeData = await getData(this.state.coordinates, item);
+      const cafeData = await getData(this.state.coordinates, item);
       this.setState({
         order: true,
-        // cafes: cafeData.data.businesses,
-        cafes: yelpData.businesses
+        cafes: cafeData.data.businesses,
+        loadingCafes: false
+        // cafes: yelpData.businesses
       });
     } catch (error) {
       console.log("Error in getting yelp data", error);
@@ -57,13 +59,14 @@ export default class Cafes extends React.Component {
 
   render() {
     console.log("_____CAFE STATE_____", this.state);
-    const {cafes} = this.state;
+    const {cafes, loadingCafes} = this.state;
     return (
       <div className="order">
         {!this.state.order ? (
           <div>
             <h4>Find</h4>
             <div className="foods">
+            {loadingCafes && <span> Finding locations near you :D</span>}
               {items.map((item) => {
                 return (
                   <span
@@ -89,7 +92,7 @@ export default class Cafes extends React.Component {
                 this.onBack(event);
               }}
             >
-              Find Somthing Else
+              Find Something Else
             </button>
             <div className="cafe-list">
             {cafes.map(cafe => <SingleCafe cafe={cafe}/>)}
