@@ -47,7 +47,7 @@ export default class MusicPlayer extends React.Component{
     return(
       <div className="fl w-25">
       <h4> Pick your music </h4>
-        <AudioPlayer src="https://18463.live.streamtheworld.com/METRO_FM.mp3" autoPlay={false} ref={(element) => { this.rap = element; }} />
+        <AudioPlayer src="https://podcast-media.zenolive.com/media/agxzfnplbm8tc3RhdHNyFgsSCU1lZGlhSXRlbRiAgODBvrfHCwyiAQdsaWJyYXJ5.mp3" autoPlay ref={(element) => { this.rap = element; }} />
         <button label="PAUSE" onClick={this.pause}> PAUSE </button>
         <button label="PLAY" onClick={this.play}> PLAY </button>
         <button label="previous" onClick={this.changeSong}> BACK </button>

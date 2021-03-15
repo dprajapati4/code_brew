@@ -1,11 +1,11 @@
 
 const data = [{
-  title:'Outdoor Cafe',
-  url:"https://www.youtube.com/watch?v=vhIwdpcP8k4"
+  title:'lofi beats',
+  url:"http://hyades.shoutca.st:8043/autodj"
 },
 {
-  title:'Beach Cafe',
-  url:"https://www.youtube.com/watch?v=6qsPKvt-w84&ab_channel=SeafoamZen"
+  title:'lofi hip hop',
+  url:"https://podcast-media.zenolive.com/media/agxzfnplbm8tc3RhdHNyFgsSCU1lZGlhSXRlbRiAgODBvrfHCwyiAQdsaWJyYXJ5.mp3"
 },
 {
   title:'Tokyo Cafe',
