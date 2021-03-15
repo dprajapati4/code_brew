@@ -30,7 +30,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log("this is app state", this.state);
     return (
       <div className="App">
         <Video video={this.state.currVideo} />

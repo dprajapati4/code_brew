@@ -4,16 +4,21 @@ const data = [{
   url:"http://hyades.shoutca.st:8043/autodj"
 },
 {
+  title:'relax cafe',
+  url:"https://stream.relaxfm.ee/cafe"
+},
+{
   title:'lofi hip hop',
-  url:"https://podcast-media.zenolive.com/media/agxzfnplbm8tc3RhdHNyFgsSCU1lZGlhSXRlbRiAgODBvrfHCwyiAQdsaWJyYXJ5.mp3"
+  url:"https://stream.zeno.fm/0r0xa792kwzuv.mp3"
 },
 {
-  title:'Tokyo Cafe',
-  url:"https://www.youtube.com/watch?v=qMHbh6XmgwM&t=103"
+  title: 'chillhop',
+  url: 'https://streams.ilovemusic.de/iloveradio17.mp3'
+
 },
 {
-  title: 'Animated Rainy Cafe',
-  url: 'https://www.youtube.com/watch?v=c0_ejQQcrwI&ab_channel=CalmedByNature'
+  title: 'lofi 24/7',
+  url: 'https://streams.ilovemusic.de/iloveradio17.mp3'
 
 }
 

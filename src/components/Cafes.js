@@ -83,7 +83,7 @@ export default class Cafes extends React.Component {
               Find Something Else
             </button>
             <div className="cafe-list">
-            {cafes.map(cafe => <SingleCafe cafe={cafe}/>)}
+            {cafes.map(cafe => <SingleCafe key={cafe.id} cafe={cafe}/>)}
             </div>
           </div>
         )}

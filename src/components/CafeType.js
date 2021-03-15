@@ -11,7 +11,6 @@ export default class CafeType extends React.Component {
   handleChange(event) {
     event.preventDefault();
     const videoObj = data.find((video)=> video.title === event.target.value );
-    // console.log('videoObj', videoObj);
     this.props.changeVideo(videoObj);
   }
 

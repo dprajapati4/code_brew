@@ -1,14 +1,14 @@
 import React from "react";
 import AudioPlayer from 'react-audio-player'
 
-const music = [];
+import data from '../data/music-data';
 
 export default class MusicPlayer extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       playing:true,
-      musicList: [],
+      musicList: data,
       position: 0
     }
     this.pause = this.pause.bind(this);
@@ -27,7 +27,9 @@ export default class MusicPlayer extends React.Component{
   }
   changeSong(event){
     event.preventDefault();
+    const music = this.state.musicList;
     let position = this.state.position;
+
     if(event.target.name === "previous"){
       position = position - 1;
       if(position < 0){
@@ -44,15 +46,17 @@ export default class MusicPlayer extends React.Component{
   }
 
   render(){
+    const {musicList, position} = this.state;
+    const currentSong = musicList[position];
     return(
       <div className="fl w-25">
       <h4> Pick your music </h4>
-        <AudioPlayer src="https://podcast-media.zenolive.com/media/agxzfnplbm8tc3RhdHNyFgsSCU1lZGlhSXRlbRiAgODBvrfHCwyiAQdsaWJyYXJ5.mp3" autoPlay ref={(element) => { this.rap = element; }} />
-        <button label="PAUSE" onClick={this.pause}> PAUSE </button>
-        <button label="PLAY" onClick={this.play}> PLAY </button>
-        <button label="previous" onClick={this.changeSong}> BACK </button>
-        <button label="next" onClick={this.changeSong}> NEXT </button>
-
+        <AudioPlayer src={currentSong.url} autoPlay loop ref={(element) => { this.rap = element; }} />
+        <button label="previous" onClick={this.changeSong}> {"<"} </button>
+        <button label="pause" onClick={this.pause}> PAUSE </button>
+        <button label="play" onClick={this.play}> PLAY </button>
+        <button label="next" onClick={this.changeSong}> {">"} </button>
+        <div> {currentSong.title} </div>
       </div>
     )
   }
