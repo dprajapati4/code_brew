@@ -4,6 +4,7 @@ import { getData } from "../helper-function/getYelpData";
 import Invite from './Invite';
 import Cafes from './Cafes';
 import MusicPlayer from "./MusicPlayer";
+import CafeType from './CafeType';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -43,7 +44,8 @@ export default class Navbar extends React.Component {
       <div id="container">
         <h1>Cafe Code Brew</h1>
         <div className="navbar-container">
-          <div className="categorys">
+          <CafeType changeVideo={this.props.changeVideo} currentVideo={this.props.currentVideo} />
+          {/* <div className="categorys">
             <h4> Pick your cafe </h4>
             {videos.map((video) => {
               return (
@@ -56,7 +58,7 @@ export default class Navbar extends React.Component {
                 </button>
               );
             })}
-          </div>
+          </div> */}
           <MusicPlayer />
             <Cafes />
           <div className="coffee-cup">

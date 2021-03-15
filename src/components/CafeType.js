@@ -1,38 +1,42 @@
 import React from "react";
+import data from '../data/video-data';
 
-
-class CafeType extends React.Component {
+export default class CafeType extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 'coconut'};
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    event.preventDefault();
+    const videoObj = data.find((video)=> video.title === event.target.value );
+    // console.log('videoObj', videoObj);
+    this.props.changeVideo(videoObj);
   }
 
-  handleSubmit(event) {
-    alert('Your favorite flavor is: ' + this.state.value);
-    event.preventDefault();
-  }
 
   render() {
+    const {currentVideo} = this.props;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div className="categorys">
+        <h4> Pick your cafe </h4>
         <label>
-          Pick your favorite flavor:
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
+          {/* Pick your favorite flavor: */}
+          <select value={currentVideo.title} onChange={this.handleChange}>
+            {data.map(video => <option key={video.title} value={video.title}>{video.title}</option>
+            )}
           </select>
         </label>
-        <input type="submit" value="Submit" />
-      </form>
+        <div>
+          
+        <a href={currentVideo.url} target="_blank" rel="noreferrer">
+        Video Source
+        </a>
+        </div>
+
+
+      </div>
     );
   }
 }

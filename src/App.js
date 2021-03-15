@@ -13,7 +13,7 @@ export default class App extends React.Component {
       currVideo: "",
       orderItems: [],
     };
-    this.getVideo = this.getVideo.bind(this);
+    this.changeVideo = this.changeVideo.bind(this);
   }
 
   async componentDidMount() {
@@ -22,9 +22,8 @@ export default class App extends React.Component {
       currVideo: data[3],
     });
   }
-  
-  getVideo(event, video) {
-    event.preventDefault();
+
+  changeVideo(video) {
     this.setState({
       currVideo: video,
     });
@@ -38,7 +37,8 @@ export default class App extends React.Component {
         <div className="navbar">
           <Navbar
             videos={this.state.videos}
-            getVideo={this.getVideo}
+            changeVideo={this.changeVideo}
+            currentVideo={this.state.currVideo}
             items={this.state.orderItems}
           />
         </div>
