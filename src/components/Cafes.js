@@ -2,6 +2,7 @@ import React from "react";
 import SingleCafe from './SingleCafe';
 import { items } from "../data/item-data";
 import { getData } from "../helper-function/getYelpData";
+import * as yelpData from '../data/temp_yelp_data';
 import getGeolocation from "../helper-function/getGeolocation";
 
 export default class Cafes extends React.Component {
@@ -35,12 +36,13 @@ export default class Cafes extends React.Component {
     try {
       event.preventDefault();
       await this.setLocation();
-      const cafeData = await getData(this.state.coordinates, item);
+      // const cafeData = await getData(this.state.coordinates, item);
       this.setState({
         order: true,
-        cafes: cafeData.data.businesses,
+        // cafes: cafeData.data.businesses,
+        cafes: yelpData[item].businesses,
         loadingCafes: false
-        // cafes: yelpData.businesses
+
       });
     } catch (error) {
       console.log("Error in getting yelp data", error);

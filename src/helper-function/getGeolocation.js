@@ -4,7 +4,6 @@ const getGeolocation = async () => {
       const permission = await navigator.permissions.query({
         name: "geolocation",
       });
-      console.log("permission", permission.state);
       if (permission.state === "granted" || permission.state === "prompt") {
         return new Promise((res, rej) => {
           navigator.geolocation.getCurrentPosition(res, rej);

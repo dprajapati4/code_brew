@@ -34,7 +34,6 @@ export default class Navbar extends React.Component {
     this.setState({
       order: false,
     });
-    console.log("in the back", this.state);
   }
 
   render() {
