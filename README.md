@@ -36,7 +36,7 @@ Before you get started make sure you have the following software installed
 >  npm install npm@latest -g
 
 ### **Installation**
-1. Get a free YELP and Twillio API Key at [Giphy](https://developers.giphy.com/) and [Twillio](https://www.twilio.com/docs/sms)
+1. Get a free YELP and Twillio API Key at [YELP](https://www.yelp.com/developers) and [Twillio](https://www.twilio.com/docs/sms)
 
 2. Clone the repo
 
