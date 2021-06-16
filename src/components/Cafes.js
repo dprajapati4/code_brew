@@ -35,7 +35,7 @@ export default class Cafes extends React.Component {
     this.setState({loadingCafes:true})
     try {
       event.preventDefault();
-      await this.setLocation();
+      // await this.setLocation();
       // const cafeData = await getData(this.state.coordinates, item);
       this.setState({
         order: true,

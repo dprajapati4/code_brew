@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Welcome to Cafe Code Brew
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p style="text-align: center;"> A virtual cafe experience! </p>
 
-## Available Scripts
+![Cafe image](https://images.unsplash.com/photo-1481833761820-0509d3217039?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80)
+## **About the Project**
+***
+Cafe Code Brew came out of quarantine and my desire to visit my local coffee shop and relax and work while listening to music and drinking delicious coffee. Cafe Code Brew creates a virtual cafe experience.
+- Pick you cafe view from a variety of sceneries and ambiences.
+- Pick your music station.
+- Order food and drink from your local cafes.
+- Text your friends to invite them to your cafe.
 
-In the project directory, you can run:
+![parks and rec gif generator gif](./src/assets/CodeBrew.gif)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Live Demo](https://cafe-code-brew.herokuapp.com)  · [Report Bug](mailto:dprajap2@gmail.com?subject=[GitHub]%20ParksnRec%20Gif%20Generator)   ·  [Request Feature](mailto:dprajap2@gmail.com?subject=[GitHub]%20ParksnRec%20Gif%20Generator )
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **Built With**
 
-### `npm run build`
+- [React.js](https://reactjs.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Yelp API](https://www.yelp.com/developers)
+- [Twillio](https://www.twilio.com/)
+- [Semantic UI](https://semantic-ui.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+&nbsp;
+## **Getting Started**
+***
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Before you get started make sure you have the following software installed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- npm
+>  npm install npm@latest -g
 
-### `npm run eject`
+### **Installation**
+1. Get a free YELP and Twillio API Key at [Giphy](https://developers.giphy.com/) and [Twillio](https://www.twilio.com/docs/sms)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Clone the repo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  >git clone  https://github.com/dprajapati4/parks-n-recs-gif-app.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. Install NPM packages
+  >npm install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Enter your API Key
 
-## Learn More
+>const API_KEY = 'ENTER YOUR API';
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Run the app on your local enviorment and have fun
+  >npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  - The page will reload if you make edits.
+  - You will also see any lint errors in the console.
 
-### Code Splitting
+## **License**
+***
+Distributed under the MIT License. See `LICENSE` for more information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## **Contact**
+***
+[Deep Prajapati](mailto:dprajap2@gmail.com?subject=[GitHub]%20ParksnRec%20Gif%20Generator)
 
-### Analyzing the Bundle Size
+[LinkedIn](https://www.linkedin.com/in/deepprajapati)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[Github](https://github.com/dprajapati4/parks-n-recs-gif-app)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## **Shameless Plug**
+***
+Check out my [medium article](https://dprajap2.medium.com/so-you-want-to-use-an-api-e291ce1b7949) on using third party API's
